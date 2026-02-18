@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Dashboard Layout</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f6f8;
+        }
+
+        .dashboard {
+            display: flex;
+            flex-wrap: wrap;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            flex: 1 1 200px;
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+        }
+
+        .sidebar h2 {
+            margin-top: 0;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar li {
+            margin: 12px 0;
+        }
+
+        .main-content {
+            flex: 3 1 500px;
+            padding: 20px;
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .card {
+            flex: 1 1 200px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .card p {
+            color: #555;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <aside class="sidebar">
+        <h2>Dashboard</h2>
+        <ul>
+            <li>Home</li>
+            <li>Analytics</li>
+            <li>Users</li>
+            <li>Settings</li>
+        </ul>
+    </aside>
+
+    <main class="main-content">
+        <h1>Overview</h1>
+
+        <div class="cards">
+            <div class="card">
+                <h3>Users</h3>
+                <p>1,250 Active Users</p>
+            </div>
+
+            <div class="card">
+                <h3>Revenue</h3>
+                <p>$8,400 This Month</p>
+            </div>
+
+            <div class="card">
+                <h3>Orders</h3>
+                <p>320 New Orders</p>
+            </div>
+
+            <div class="card">
+                <h3>Performance</h3>
+                <p>85% Growth Rate</p>
+            </div>
+        </div>
+    </main>
+
+</div>
+
+</body>
+</html>
