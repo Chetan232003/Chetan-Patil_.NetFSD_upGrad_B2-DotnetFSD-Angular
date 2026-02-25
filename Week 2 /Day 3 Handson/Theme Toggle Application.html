@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Theme Toggle App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 100px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .light-mode {
+            background-color: white;
+            color: black;
+        }
+
+        .dark-mode {
+            background-color: #222;
+            color: white;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Theme Toggle Application</h2>
+    <button id="toggleBtn">Switch to Dark Mode</button>
+
+    <script>
+        const toggleBtn = document.getElementById("toggleBtn");
+        const body = document.body;
+
+        function applyTheme(theme) {
+            if (theme === "dark") {
+                body.classList.add("dark-mode");
+                body.classList.remove("light-mode");
+                toggleBtn.textContent = "Switch to Light Mode";
+            } else {
+                body.classList.add("light-mode");
+                body.classList.remove("dark-mode");
+                toggleBtn.textContent = "Switch to Dark Mode";
+            }
+        }
+
+        const savedTheme = localStorage.getItem("theme") || "light";
+        applyTheme(savedTheme);
+
+        toggleBtn.addEventListener("click", function () {
+            const currentTheme = body.classList.contains("dark-mode") ? "dark" : "light";
+            const newTheme = currentTheme === "dark" ? "light" : "dark";
+
+            applyTheme(newTheme);
+            localStorage.setItem("theme", newTheme);
+        });
+    </script>
+
+</body>
+</html>
