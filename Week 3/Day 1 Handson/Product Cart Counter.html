@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Cart Counter</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+            background: #f5f7fa;
+        }
+
+        .header {
+            font-size: 20px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .product {
+            background: #fff;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        button {
+            padding: 6px 12px;
+            cursor: pointer;
+        }
+
+        .added-msg {
+            color: green;
+            font-size: 14px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    Cart Items: <span id="cartCount">0</span>
+</div>
+
+<div class="product">
+    <span>Laptop</span>
+    <div>
+        <button class="addBtn">Add to Cart</button>
+        <span class="added-msg"></span>
+    </div>
+</div>
+
+<div class="product">
+    <span>Headphones</span>
+    <div>
+        <button class="addBtn">Add to Cart</button>
+        <span class="added-msg"></span>
+    </div>
+</div>
+
+<div class="product">
+    <span>Keyboard</span>
+    <div>
+        <button class="addBtn">Add to Cart</button>
+        <span class="added-msg"></span>
+    </div>
+</div>
+
+<div class="product">
+    <span>Mouse</span>
+    <div>
+        <button class="addBtn">Add to Cart</button>
+        <span class="added-msg"></span>
+    </div>
+</div>
+
+<script>
+$(document).ready(function(){
+
+    let count = 0;
+
+    $(".addBtn").click(function(){
+
+        count++;
+        $("#cartCount").text(count);
+
+        $(this).prop("disabled", true);
+
+        $(this).siblings(".added-msg").text(" Added");
+
+    });
+
+});
+</script>
+
+</body>
+</html>

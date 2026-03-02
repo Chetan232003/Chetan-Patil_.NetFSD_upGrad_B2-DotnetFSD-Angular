@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery To-Do List</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        input {
+            width: 70%;
+            padding: 8px;
+        }
+
+        button {
+            padding: 8px 12px;
+            margin-left: 5px;
+            cursor: pointer;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        li {
+            padding: 10px;
+            margin-bottom: 8px;
+            background: #f1f1f1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .completed {
+            text-decoration: line-through;
+            color: gray;
+        }
+
+        .counts {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>To-Do List</h2>
+
+    <input type="text" id="taskInput" placeholder="Enter task">
+    <button id="addTask">Add</button>
+
+    <ul id="taskList"></ul>
+
+    <div class="counts">
+        Total Tasks: <span id="totalCount">0</span> |
+        Completed: <span id="completedCount">0</span>
+    </div>
+</div>
+
+<script>
+$(document).ready(function(){
+
+    let total = 0;
+    let completed = 0;
+
+    $("#addTask").click(function(){
+
+        let taskText = $("#taskInput").val().trim();
+
+        if(taskText === "") return;
+
+        total++;
+        $("#totalCount").text(total);
+
+        $("#taskList").append(`
+            <li>
+                <span class="taskText">${taskText}</span>
+                <div>
+                    <button class="completeBtn">✔</button>
+                    <button class="deleteBtn">🗑</button>
+                </div>
+            </li>
+        `);
+
+        $("#taskInput").val("");
+    });
+
+    $("#taskList").on("click", ".completeBtn", function(){
+
+        let task = $(this).closest("li").find(".taskText");
+
+        if(!task.hasClass("completed")){
+            task.addClass("completed");
+            completed++;
+        } else {
+            task.removeClass("completed");
+            completed--;
+        }
+
+        $("#completedCount").text(completed);
+    });
+
+    $("#taskList").on("click", ".deleteBtn", function(){
+
+        let task = $(this).closest("li").find(".taskText");
+
+        if(task.hasClass("completed")){
+            completed--;
+            $("#completedCount").text(completed);
+        }
+
+        total--;
+        $("#totalCount").text(total);
+
+        $(this).closest("li").remove();
+    });
+
+});
+</script>
+
+</body>
+</html>

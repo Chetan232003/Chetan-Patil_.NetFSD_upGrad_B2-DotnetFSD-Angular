@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FAQ Toggle</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            padding: 40px;
+        }
+
+        .faq-container {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .faq {
+            border-bottom: 1px solid #ccc;
+            padding: 15px;
+            cursor: pointer;
+        }
+
+        .faq.active {
+            background: #e8f0fe;
+            font-weight: bold;
+        }
+
+        .answer {
+            display: none;
+            padding: 10px 15px;
+            background: #fff;
+        }
+    </style>
+</head>
+<body>
+
+<div class="faq-container">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq">What is jQuery?</div>
+    <div class="answer">jQuery is a fast and lightweight JavaScript library for DOM manipulation.</div>
+
+    <div class="faq">Why use jQuery?</div>
+    <div class="answer">It simplifies event handling, animations, and AJAX operations.</div>
+
+    <div class="faq">Is jQuery still used?</div>
+    <div class="answer">Yes, many legacy and simple projects still use jQuery.</div>
+
+    <div class="faq">Can I use jQuery with React?</div>
+    <div class="answer">It’s not recommended because both manipulate the DOM differently.</div>
+
+    <div class="faq">Is jQuery easy to learn?</div>
+    <div class="answer">Yes, its syntax is simple and beginner-friendly.</div>
+</div>
+
+<script>
+$(document).ready(function(){
+
+    $(".faq").click(function(){
+
+        $(this).next(".answer").slideToggle();
+
+        $(this).toggleClass("active");
+
+    });
+
+});
+</script>
+
+</body>
+</html>
