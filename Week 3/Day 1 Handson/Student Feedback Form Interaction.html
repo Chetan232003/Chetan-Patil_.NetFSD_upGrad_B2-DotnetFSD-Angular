@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Feedback Form</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            padding: 30px;
+        }
+
+        .container {
+            width: 400px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        input, select, textarea, button {
+            width: 100%;
+            margin-top: 10px;
+            padding: 8px;
+        }
+
+        .message {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        .error {
+            color: red;
+        }
+
+        .success {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Student Feedback Form</h2>
+
+    <input type="text" id="name" placeholder="Enter your name">
+    <input type="email" id="email" placeholder="Enter your email">
+
+    <select id="rating">
+        <option value="">Select Course Rating</option>
+        <option>Excellent</option>
+        <option>Good</option>
+        <option>Average</option>
+        <option>Poor</option>
+    </select>
+
+    <textarea id="comments" placeholder="Enter comments"></textarea>
+
+    <button id="submitBtn">Submit</button>
+
+    <div class="message"></div>
+</div>
+
+<script>
+$(document).ready(function(){
+
+    $("#submitBtn").click(function(){
+
+        let name = $("#name").val().trim();
+        let email = $("#email").val().trim();
+
+        if(name === "" || email === ""){
+            $(".message")
+                .removeClass("success")
+                .addClass("error")
+                .text(" Name and Email are required!");
+        }
+        else{
+            $(".message")
+                .removeClass("error")
+                .addClass("success")
+                .text("Feedback submitted successfully!");
+
+            $("#name").val("");
+            $("#email").val("");
+            $("#rating").val("");
+            $("#comments").val("");
+        }
+
+    });
+
+});
+</script>
+
+</body>
+</html>
