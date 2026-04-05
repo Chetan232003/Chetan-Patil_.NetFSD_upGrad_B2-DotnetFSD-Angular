@@ -1,0 +1,18 @@
+﻿@model List<Contact_Management_System.DataAccessLayer.Modals.ContactInfo>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Company</th>
+        <th>Department</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.FirstName</td>
+            <td>@item.Company.CompanyName</td>
+            <td>@item.Department.DepartmentName</td>
+        </tr>
+    }
+</table>

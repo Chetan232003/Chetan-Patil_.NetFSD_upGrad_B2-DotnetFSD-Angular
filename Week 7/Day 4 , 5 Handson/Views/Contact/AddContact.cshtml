@@ -1,0 +1,38 @@
+﻿@model Contact_Management_System.DataAccessLayer.Modals.ContactInfo
+
+<form method="post">
+
+    <label>First Name</label>
+    <input asp-for="FirstName" />
+
+    <label>Last Name</label>
+    <input asp-for="LastName" />
+
+    <label>Email</label>
+    <input asp-for="EmailId" />
+
+    <label>Mobile</label>
+    <input asp-for="MobileNo" />
+
+    <label>Designation</label>
+    <input asp-for="Designation" />
+
+    <label>Company</label>
+    <select asp-for="CompanyId">
+        @foreach (var c in ViewBag.Companies)
+        {
+            <option value="@c.CompanyId">@c.CompanyName</option>
+        }
+    </select>
+
+    <label>Department</label>
+    <select asp-for="DepartmentId">
+        @foreach (var d in ViewBag.Departments)
+        {
+            <option value="@d.DepartmentId">@d.DepartmentName</option>
+        }
+    </select>
+
+    <button type="submit">Save</button>
+
+</form>
