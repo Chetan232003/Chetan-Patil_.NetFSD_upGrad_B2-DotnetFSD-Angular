@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36603.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "..\..\..\..\source\repos\ContactManagementSystem\DataAccessLayer\DataAccessLayer.csproj", "{C8017A8A-4825-4BFC-B4A3-FFFF85D0DB80}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppUILayer", "..\..\..\..\source\repos\ContactManagementSystem\AppUILayer\AppUILayer.csproj", "{1E1217B9-AC83-45C3-9E56-A9CA755AFE18}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C8017A8A-4825-4BFC-B4A3-FFFF85D0DB80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8017A8A-4825-4BFC-B4A3-FFFF85D0DB80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8017A8A-4825-4BFC-B4A3-FFFF85D0DB80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8017A8A-4825-4BFC-B4A3-FFFF85D0DB80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E1217B9-AC83-45C3-9E56-A9CA755AFE18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E1217B9-AC83-45C3-9E56-A9CA755AFE18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E1217B9-AC83-45C3-9E56-A9CA755AFE18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E1217B9-AC83-45C3-9E56-A9CA755AFE18}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {831C5D47-77DF-45BF-8F46-95830B23CDA6}
+	EndGlobalSection
+EndGlobal
