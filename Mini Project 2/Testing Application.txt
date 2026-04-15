@@ -1,0 +1,96 @@
+Testing Application
+
+==>  Test Admin Flow
+
+
+1. Login as Admin
+
+Go to: https://localhost:7001/Account/AdminLogin
+Email: admin@ems.com
+Password: Admin@123
+You should be redirected to the Admin Dashboard
+
+2. Add a Speaker
+
+Click Speakers in the navbar
+Enter a name e.g. Chetan  → click Add
+The speaker appears in the table below
+
+3. Add an Event
+
+Click Events → Add Event
+Fill in: Name, Category, Date (must be a future date), Status
+Click Save
+You are redirected back to the Events list
+
+4. Add a Session to the Event
+
+Click Sessions in the navbar → Add Session
+Select the event you just created
+Fill in: Title, Start time, End time (end must be after start), URL (optional)
+Click Save
+
+5. Assign a Speaker to the Session
+
+In the Sessions table, click Assign Speaker next to your session
+Select a speaker from the radio buttons
+Click Assign
+The session now shows the speaker name
+
+6. Toggle Event Status
+
+Go to Events
+Click the green Active button — it turns grey and says In-Active
+Click again to toggle back
+
+7. Delete an Event
+
+Click Delete next to any event
+Confirm the popup — the event and all its sessions are removed
+
+-----------------------------------------------------------------------------------------------------------
+
+ Test Participant Flow
+1. Register as a Participant
+
+Go to: https://localhost:7001/Account/Register
+Fill in Name, Email, Password (6–20 characters), Confirm Password
+Click Register
+You are redirected to the Login page with a success message
+
+2. Try registering with the same email again
+
+Go to Register, use the same email
+You should see the error: "This email is already registered"
+This tests the duplicate email validation
+
+3. Login as Participant
+
+Go to: https://localhost:7001/Account/Login
+Enter your registered email and password
+You are redirected to My Dashboard
+
+4. Browse and Register for an Event
+
+Click Events in the navbar
+Find an Active event, click Register
+You are taken to your Dashboard where the event now appears
+
+5. Try registering for the same event again
+
+Go to Home, click Register on the same event
+You should see: "You are already registered for this event"
+
+6. Mark Attendance
+
+On your Dashboard, the Attended column shows a button saying No
+Click it — it changes to Yes (green)
+Click again to toggle back
+
+7. View Sessions of a Registered Event
+
+Click View Sessions next to any registered event
+You see a table of all sessions with speaker names, times, and join links
+
+
+🔍 Step 6 — Verify the Database in SSMS
